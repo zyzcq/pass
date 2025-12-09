@@ -2,51 +2,25 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>PM Exam Master</title>
-    <!-- 移除 CDN 版本的 Tailwind，因为本地已经通过 npm 安装并配置了 -->
-    <!-- 移除 importmap，因为 Vite 会自动处理依赖 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
-      /* Hide scrollbar for chrome/safari/opera */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-      }
-      .perspective-1000 {
-        perspective: 1000px;
-      }
-      .transform-style-3d {
-        transform-style: preserve-3d;
-      }
-      .backface-hidden {
-        backface-visibility: hidden;
-      }
-      .rotate-y-180 {
-        transform: rotateY(180deg);
-      }
-    </style>
+    <meta name="description" content="Project Management Exam Prep Tool">
   <script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25"
   }
 }
 </script>
 </head>
-  <body>
+  <body class="bg-gray-50 text-gray-800">
     <div id="root"></div>
-    <!-- 关键修复：添加 Vite 入口脚本 -->
-    <!-- 注意：如果你本地的文件名是 src/main.tsx，请将下面的 index.tsx 改为 main.tsx -->
-    <script type="module" src="/src/index.tsx"></script>
+    <!-- 关键：这里指向你的入口文件。Vite 默认是 src/main.tsx -->
+    <!-- 如果你的文件叫 src/index.tsx，请手动将下面的 main.tsx 改为 index.tsx -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
