@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PM Exam Master</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 移除 CDN 版本的 Tailwind，因为本地已经通过 npm 安装并配置了 -->
+    <!-- 移除 importmap，因为 Vite 会自动处理依赖 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
@@ -33,16 +34,19 @@
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- 关键修复：添加 Vite 入口脚本 -->
+    <!-- 注意：如果你本地的文件名是 src/main.tsx，请将下面的 index.tsx 改为 main.tsx -->
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
